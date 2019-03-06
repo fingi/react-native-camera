@@ -33,16 +33,16 @@ const requestPermissions = async (
     let params = undefined;
     if (permissionDialogTitle || permissionDialogMessage)
       params = { title: permissionDialogTitle, message: permissionDialogMessage };
-    const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA, params);
+    const granted = await PermissionsAndroid.requestPermission(PermissionsAndroid.PERMISSIONS.CAMERA, params);
     if (!hasVideoAndAudio)
-      return granted === PermissionsAndroid.RESULTS.GRANTED || granted === true;
+      return granted === 'granted' || granted === true;
     const grantedAudio = await PermissionsAndroid.request(
       PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
       params,
     );
     return (
-      (granted === PermissionsAndroid.RESULTS.GRANTED || granted === true) &&
-      (grantedAudio === PermissionsAndroid.RESULTS.GRANTED || grantedAudio === true)
+      (granted === 'granted' || granted === true) &&
+      (grantedAudio === 'granted' || grantedAudio === true)
     );
   }
   return true;

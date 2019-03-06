@@ -33,14 +33,14 @@ const requestPermissions = async (
   if (Platform.OS === 'ios') {
     hasCameraPermissions = await CameraManager.checkVideoAuthorizationStatus();
   } else if (Platform.OS === 'android') {
-    const cameraPermissionResult = await PermissionsAndroid.request(
+    const cameraPermissionResult = await PermissionsAndroid.requestPermission(
       PermissionsAndroid.PERMISSIONS.CAMERA,
       params,
     );
     if (typeof cameraPermissionResult === 'boolean') {
       hasCameraPermissions = cameraPermissionResult;
     } else {
-      hasCameraPermissions = cameraPermissionResult === PermissionsAndroid.RESULTS.GRANTED;
+      hasCameraPermissions = cameraPermissionResult === 'granted';
     }
   }
 
@@ -49,14 +49,14 @@ const requestPermissions = async (
       hasRecordAudioPermissions = await CameraManager.checkRecordAudioAuthorizationStatus();
     } else if (Platform.OS === 'android') {
       if (await CameraManager.checkIfRecordAudioPermissionsAreDefined()) {
-        const audioPermissionResult = await PermissionsAndroid.request(
+        const audioPermissionResult = await PermissionsAndroid.requestPermission(
           PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
           params,
         );
         if (typeof audioPermissionResult === 'boolean') {
           hasRecordAudioPermissions = audioPermissionResult
         } else {
-          hasRecordAudioPermissions = audioPermissionResult === PermissionsAndroid.RESULTS.GRANTED;
+          hasRecordAudioPermissions = audioPermissionResult === 'granted';
         }
       } else if (__DEV__) {
         // eslint-disable-next-line no-console
