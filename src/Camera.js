@@ -36,7 +36,7 @@ const requestPermissions = async (
     const granted = await PermissionsAndroid.requestPermission(PermissionsAndroid.PERMISSIONS.CAMERA, params);
     if (!hasVideoAndAudio)
       return granted === 'granted' || granted === true;
-    const grantedAudio = await PermissionsAndroid.request(
+    const grantedAudio = await PermissionsAndroid.requestPermission(
       PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
       params,
     );
