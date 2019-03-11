@@ -2,12 +2,12 @@
 #import "RNCameraManager.h"
 #import "RNFileSystem.h"
 #import "RNImageUtils.h"
-#import <React/RCTBridge.h>
-#import <React/RCTUIManager.h>
-#import <React/RCTEventDispatcher.h>
-#import <React/RCTLog.h>
-#import <React/RCTUtils.h>
-#import <React/UIView+React.h>
+#import "RCTBridge.h"
+#import "RCTUIManager.h"
+#import "RCTEventDispatcher.h"
+#import "RCTLog.h"
+#import "RCTUtils.h"
+#import "UIView+React.h"
 
 @implementation RNCameraManager
 

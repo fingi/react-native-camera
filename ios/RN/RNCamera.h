@@ -1,6 +1,6 @@
 #import <AVFoundation/AVFoundation.h>
-#import <React/RCTBridge.h>
-#import <React/RCTBridgeModule.h>
+#import "RCTBridge.h"
+#import "RCTBridgeModule.h"
 #import <UIKit/UIKit.h>
 
 #if __has_include("RNFaceDetectorManager.h")

@@ -2,10 +2,10 @@
 #import "RNCameraUtils.h"
 #import "RNImageUtils.h"
 #import "RNFileSystem.h"
-#import <React/RCTEventDispatcher.h>
-#import <React/RCTLog.h>
-#import <React/RCTUtils.h>
-#import <React/UIView+React.h>
+#import "RCTEventDispatcher.h"
+#import "RCTLog.h"
+#import  "RCTUtils.h"
+#import "UIView+React.h"
 #import  "RNSensorOrientationChecker.h"
 @interface RNCamera ()
 

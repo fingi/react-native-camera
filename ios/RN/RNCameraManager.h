@@ -1,5 +1,5 @@
-#import <React/RCTViewManager.h>
-#import <React/RCTBridgeModule.h>
+#import "RCTViewManager.h"
+#import "RCTBridgeModule.h"
 #import <AVFoundation/AVFoundation.h>
 
 @class RNCameraManager;
